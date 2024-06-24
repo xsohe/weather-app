@@ -12,6 +12,7 @@ class CuacaModel {
   int? id;
   String? name;
   int? cod;
+  // List<HourlyForecast>? hourlyForecast; // Tambahkan properti ini
 
   CuacaModel(
       {this.coord,
@@ -222,5 +223,21 @@ class Sys {
     data['sunrise'] = this.sunrise;
     data['sunset'] = this.sunset;
     return data;
+  }
+}
+
+class HourlyForecast {
+  final DateTime dt;
+  final double temp;
+  final Weather weather;
+
+  HourlyForecast({required this.dt, required this.temp, required this.weather});
+
+  factory HourlyForecast.fromJson(Map<String, dynamic> json) {
+    return HourlyForecast(
+      dt: DateTime.fromMillisecondsSinceEpoch(json['dt'] * 1000),
+      temp: json['main']['temp'].toDouble(),
+      weather: Weather.fromJson(json['weather'][0]),
+    );
   }
 }
