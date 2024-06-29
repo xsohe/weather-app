@@ -1,8 +1,10 @@
 # Weather-APP
 
-<img src="image/1.png" width="200px">
-<img src="image/2.png" width="200px">
-<img src="image/3.png" width="200px">
+<p align="center">
+  <img src="image/1.png" width="200px">
+  <img src="image/2.png" width="200px">
+  <img src="image/3.png" width="200px">
+</p>
 
 ## Getting Started
 
